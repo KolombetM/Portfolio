@@ -9,28 +9,33 @@ export default function LanguageToggler() {
   if (!context) {
     throw new Error("Context not provided");
   }
-  
-  const { setLanguage } = context;
+
+  const { setLanguage, language } = context;
 
   function toggleLanguage(lang: Language) {
     setLanguage(lang);
   }
 
-  return (
-   <div className="flex gap-2">
-  <LanguageButton
-    active={language === "en"}
-    onClick={() => setLanguage("en")}
-  >
-    EN
-  </LanguageButton>
+  const languages = Object.keys(translations) as Language[];
 
-  <LanguageButton
-    active={language === "fr"}
-    onClick={() => setLanguage("fr")}
-  >
-    FR
-  </LanguageButton>
-</div>
+  return (
+    <div className="flex rounded border border-green-400 overflow-hidden font-mono text-sm">
+      {languages.map(lang => {
+        return (
+          <button
+            className={`
+              px-2 py-1 transition-colors
+              ${language === lang
+                ? "bg-green-400 text-black"
+                : "text-green-400 hover:bg-green-400 hover:text-black"}
+            `}
+            onClick={() => setLanguage(lang)}
+            key={lang}
+          >
+            {lang.toUpperCase()}
+          </button>
+        )
+      })}
+    </div>
   )
 }
