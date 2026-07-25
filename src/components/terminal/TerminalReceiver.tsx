@@ -1,6 +1,5 @@
 import { executeCommand } from '@/commands/commandExcecutor';
 import { TerminalReceiverInterface } from './TerminalReceiverInterface';
-import en from '@/locales/en';
 
 type SetHistory = React.Dispatch<React.SetStateAction<React.ReactNode[]>>;
 type SetCommand = React.Dispatch<React.SetStateAction<string>>;

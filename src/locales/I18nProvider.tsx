@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { I18nContext, Language } from "@/locales/I18nContext";
+import { I18nContext } from "@/locales/I18nContext";
+import { Language } from "@/locales/index";
 
 import en from "@/locales/en";
 import fr from "@/locales/fr";

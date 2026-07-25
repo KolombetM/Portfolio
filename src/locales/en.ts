@@ -1,4 +1,9 @@
 export default {
+  terminalBody: {
+    welcomMessage: `Welcome to my protfolio.`,
+    type1: `Type`,
+    type2: `to see available commands. Note that all the commands from help are clickable.`
+  },
   commands: {
     help: {
       description: `Show available commands`

@@ -1,4 +1,9 @@
 export default {
+  terminalBody: {
+    welcomMessage: `Bienvenue dans mon portfolio.`,
+    type1: `Tapez`,
+    type2: `pour voir les commandes disponibles. Notez que toutes les commandes affichées par help sont cliquables.`
+  },
   commands: {
     help: {
       description: `Afficher les commandes disponibles`

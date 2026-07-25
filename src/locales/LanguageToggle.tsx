@@ -12,10 +12,6 @@ export default function LanguageToggler() {
 
   const { setLanguage, language } = context;
 
-  function toggleLanguage(lang: Language) {
-    setLanguage(lang);
-  }
-
   const languages = Object.keys(translations) as Language[];
 
   return (

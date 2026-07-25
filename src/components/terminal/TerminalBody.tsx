@@ -19,7 +19,11 @@ export default function TerminalBody({ inputRef }: TerminalBodyProps) {
   if (!context) {
     throw new Error("Context not provided");
   }
-  const { t } = context;
+  const { t, language } = context;
+
+  useEffect(() => {
+    terminalReceiver.clearOutput();
+  }, [language])
 
   const terminalReceiver = useMemo(
     () => new TerminalReceiver(setOutputHistory, setCommand, t),
@@ -45,8 +49,8 @@ export default function TerminalBody({ inputRef }: TerminalBodyProps) {
     <div
     ref={scrollRef}
     className="h-150 p-6 font-mono text-green-400 whitespace-pre-wrap wrap-break-word overflow-y-auto terminal-scroll">
-      <p>Welcome to my portfolio.</p>
-      <p>Type "<button
+      <p>{t("Welcome to my portfolio.", "terminalBody.welcomMessage")}</p>
+      <p>{t("Type", "terminalBody.type1")} "<button
                 className="
                 text-cyan-400
                   cursor-pointer
@@ -54,10 +58,10 @@ export default function TerminalBody({ inputRef }: TerminalBodyProps) {
                   hover:text-cyan-300
                 "
                 onClick={() => terminalReceiver.inputCommand("help")}
-              >help</button>" to see available commands. Note that all the commands from help are clickable.</p>
+              >help</button>" {t("to see available commands.", "terminalBody.type2")}</p>
       
-       {/* It is ok to use index as key because we add 1 element or remove all.  */}
-       {/* So the order of elements will not change */}
+      {/* It is ok to use index as key because we add 1 element or remove all.  */}
+      {/* So the order of elements will not change */}
       {outputHistory.map((output, index) => (
         <React.Fragment key={index}>
           {output}
