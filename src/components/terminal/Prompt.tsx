@@ -2,44 +2,41 @@
 import { KeyboardEvent, useRef, useState } from "react";
 import { Caret } from "./Caret";
 import { useCommandHistory } from "./hooks/useCommandHistory";
+import { CommandHistory } from "./CommandHistory";
 
 type PromptProps = {
   command: string;
   inputRef: React.RefObject<HTMLTextAreaElement | null>;
   onChange: (command: string) => void;
   onSubmit: () => void;
+  commandHistory: CommandHistory;
 };
 
 export default function Prompt({
   command,
   inputRef,
   onChange,
-  onSubmit
+  onSubmit,
+  commandHistory
 }: PromptProps) {
-
-  const {
-    addCommand,
-    previous,
-    next
-  } = useCommandHistory();
 
   function handleKeyDown(e: KeyboardEvent<HTMLTextAreaElement>) {
     switch (e.key) {
       case "Enter":
         e.preventDefault();
         if (command.trim() === "") return;
-        addCommand(command);
+        commandHistory.addCommand(command);
         onSubmit();
         break;
       case "ArrowUp":
         e.preventDefault();
-        const prevCommand = previous();
+        const prevCommand = commandHistory.previous();
         if (prevCommand !== undefined)
           onChange(prevCommand);
         break;
       case "ArrowDown":
         e.preventDefault();
-        const nextCommand = next();
+        const nextCommand = commandHistory.next();
         onChange(nextCommand ?? "");
         break;
       default:

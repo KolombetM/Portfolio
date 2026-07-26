@@ -7,7 +7,7 @@ export const projectsCommand: Command = {
   descriptionKey: "commands.projects.description",
 
   execute(terminalReceiver: TerminalReceiver): void {
-    const t = terminalReceiver.translate;
+    const t = terminalReceiver.translate.bind(terminalReceiver);
 
     const output = (
       <div className="flex flex-col gap-4">

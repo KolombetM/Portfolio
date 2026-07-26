@@ -4,10 +4,28 @@ import { TerminalReceiverInterface } from './TerminalReceiverInterface';
 type SetHistory = React.Dispatch<React.SetStateAction<React.ReactNode[]>>;
 type SetCommand = React.Dispatch<React.SetStateAction<string>>;
 export class TerminalReceiver implements TerminalReceiverInterface {
+
+  private translator: (
+    fallback: string,
+    key?: string
+  ) => string = (fallback, _) => fallback;
+
   constructor(private setOutputHistory: SetHistory,
-    private setCommand: SetCommand,
-    public translate: (fallback: string, key?: string) => string
+    private setCommand: SetCommand
   ) { }
+
+  setTranslator(
+    translator: (
+      fallback: string,
+      key?: string
+    ) => string
+  ) {
+    this.translator = translator;
+  }
+
+  translate(fallback: string, key?: string) {
+    return this.translator(fallback, key);
+  }
 
   clearOutput(): void {
     this.setOutputHistory([]);

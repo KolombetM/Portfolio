@@ -8,7 +8,7 @@ export const aboutCommand: Command = {
   descriptionKey: "commands.about.description",
 
   execute(terminalReceiver: TerminalReceiver): void {
-    const t = terminalReceiver.translate;
+    const t = terminalReceiver.translate.bind(terminalReceiver);
     const output: React.ReactElement = (
       <div className="flex flex-col gap-4">
         <br />

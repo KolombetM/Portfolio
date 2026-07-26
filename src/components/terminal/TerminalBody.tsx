@@ -5,6 +5,7 @@ import { executeCommand } from "@/commands/commandExcecutor";
 import { TerminalReceiver } from "@/components/terminal/TerminalReceiver";
 import React from "react";
 import { I18nContext } from "@/locales/I18nContext";
+import { CommandHistory } from "./CommandHistory";
 
 type TerminalBodyProps = {
   inputRef: React.RefObject<HTMLTextAreaElement | null>;
@@ -21,14 +22,19 @@ export default function TerminalBody({ inputRef }: TerminalBodyProps) {
   }
   const { t, language } = context;
 
-  useEffect(() => {
-    terminalReceiver.clearOutput();
-  }, [language])
+  const commandHistory = useRef(new CommandHistory()).current;
 
-  const terminalReceiver = useMemo(
-    () => new TerminalReceiver(setOutputHistory, setCommand, t),
-    [setOutputHistory, setCommand, t]
-  );
+  const terminalReceiver = useRef(
+    new TerminalReceiver(
+      setOutputHistory,
+      setCommand
+    )
+  ).current;
+
+  useEffect(() => {
+    terminalReceiver.setTranslator(t);
+  }, [language])
+  
 
   useLayoutEffect(() => {
      if (scrollRef.current) {
@@ -73,6 +79,7 @@ export default function TerminalBody({ inputRef }: TerminalBodyProps) {
         command={command}
         onChange={setCommand}
         onSubmit={() => handlePromptSubmit()}
+        commandHistory={commandHistory}
       />
     </div>
   )
