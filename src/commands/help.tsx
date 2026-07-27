@@ -1,13 +1,15 @@
 import { Command } from "@/types/command";
 import { commands } from "@/commands/registry";
-import { TerminalReceiver } from "@/components/terminal/TerminalReceiver";
+import { TerminalAPI } from "@/components/terminal/TerminalAPI";
+import { ReplayMode } from "@/types/ReplayMode";
 
 export const helpCommand: Command = {
   name: "help",
   description: "Show available commands",
   descriptionKey: "commands.help.description",
+  replayMode: ReplayMode.Normal,
 
-  execute(terminalReceiver: TerminalReceiver): void {
+  execute(terminalAPI: TerminalAPI): void {
     let output = commands
       .map(
         (command) => {
@@ -15,7 +17,7 @@ export const helpCommand: Command = {
             <div key={crypto.randomUUID()}>
               <button
                 className="cursor-pointer"
-                onClick={() => terminalReceiver.inputCommand(command.name)}
+                onClick={() => terminalAPI.inputCommand(command.name)}
               >
                 <span
                   className="
@@ -30,11 +32,11 @@ export const helpCommand: Command = {
                   {command.name}
                 </span>
               </button>
-              - {terminalReceiver.translate(command.description, command.descriptionKey)}
+              - {terminalAPI.translate(command.description, command.descriptionKey)}
             </div>
           )
         });
 
-    terminalReceiver.write(output);
+    terminalAPI.write(output);
   }
 };

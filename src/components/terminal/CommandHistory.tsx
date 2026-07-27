@@ -26,4 +26,8 @@ export class CommandHistory {
     }
     return;
   }
+
+  getHistory(): string[] {
+    return this.history;
+  }
 }

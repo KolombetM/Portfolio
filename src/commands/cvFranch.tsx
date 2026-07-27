@@ -1,12 +1,14 @@
-import { TerminalReceiver } from "@/components/terminal/TerminalReceiver";
+import { TerminalAPI } from "@/components/terminal/TerminalAPI";
 import { Command } from "@/types/command";
+import { ReplayMode } from "@/types/ReplayMode";
 
 export const cvFranchCommand: Command = {
   name: "cvFrance",
   description: "Open my CV in French",
   descriptionKey: "commands.cvFrance.description",
+  replayMode: ReplayMode.Never,
 
-  execute(terminalReceiver: TerminalReceiver): void {
-    terminalReceiver.openUrl("/documents/KolombetFR.pdf");
+  execute(terminalAPI: TerminalAPI): void {
+    terminalAPI.openUrl("/documents/KolombetFR.pdf");
   }
 }

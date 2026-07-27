@@ -1,7 +1,6 @@
 "use client";
-import { KeyboardEvent, useRef, useState } from "react";
+import { KeyboardEvent } from "react";
 import { Caret } from "./Caret";
-import { useCommandHistory } from "./hooks/useCommandHistory";
 import { CommandHistory } from "./CommandHistory";
 
 type PromptProps = {
@@ -25,7 +24,6 @@ export default function Prompt({
       case "Enter":
         e.preventDefault();
         if (command.trim() === "") return;
-        commandHistory.addCommand(command);
         onSubmit();
         break;
       case "ArrowUp":

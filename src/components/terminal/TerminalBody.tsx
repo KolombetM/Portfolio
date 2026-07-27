@@ -1,11 +1,10 @@
 "use client";
 import { useContext, useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
-import Prompt from "./Prompt";
-import { executeCommand } from "@/commands/commandExcecutor";
-import { TerminalReceiver } from "@/components/terminal/TerminalReceiver";
+import Prompt from "@/components/terminal/Prompt";
+import { TerminalAPI } from "@/components/terminal/TerminalAPI";
 import React from "react";
 import { I18nContext } from "@/locales/I18nContext";
-import { CommandHistory } from "./CommandHistory";
+import { CommandHistory } from "@/components/terminal/CommandHistory";
 
 type TerminalBodyProps = {
   inputRef: React.RefObject<HTMLTextAreaElement | null>;
@@ -24,15 +23,18 @@ export default function TerminalBody({ inputRef }: TerminalBodyProps) {
 
   const commandHistory = useRef(new CommandHistory()).current;
 
-  const terminalReceiver = useRef(
-    new TerminalReceiver(
+  const terminalAPI = useRef(
+    new TerminalAPI(
       setOutputHistory,
-      setCommand
+      setCommand,
+      commandHistory
     )
   ).current;
 
   useEffect(() => {
-    terminalReceiver.setTranslator(t);
+    terminalAPI.setTranslator(t);
+    terminalAPI.clearOutput();
+    terminalAPI.replayCommands(commandHistory.getHistory());
   }, [language])
   
 
@@ -46,7 +48,7 @@ export default function TerminalBody({ inputRef }: TerminalBodyProps) {
 
     if (command?.trim() === "") return;
 
-    executeCommand(command, terminalReceiver);
+    terminalAPI.executeCommand(command);
 
     setCommand("");
   }
@@ -63,7 +65,7 @@ export default function TerminalBody({ inputRef }: TerminalBodyProps) {
                   hover:underline
                   hover:text-cyan-300
                 "
-                onClick={() => terminalReceiver.inputCommand("help")}
+                onClick={() => terminalAPI.inputCommand("help")}
               >help</button>" {t("to see available commands.", "terminalBody.type2")}</p>
       
       {/* It is ok to use index as key because we add 1 element or remove all.  */}

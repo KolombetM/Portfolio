@@ -1,9 +1,11 @@
-import { TerminalReceiver } from "@/components/terminal/TerminalReceiver";
+import { TerminalAPI } from "@/components/terminal/TerminalAPI";
+import { ReplayMode } from "./ReplayMode";
 
 export interface Command {
   name: string;
   description: string;
   // Used for translateion
   descriptionKey?: string;
-  execute(receiver: TerminalReceiver): void;
+  replayMode: ReplayMode;
+  execute(receiver: TerminalAPI): void;
 }

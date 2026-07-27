@@ -1,14 +1,16 @@
-import { TerminalReceiver } from "@/components/terminal/TerminalReceiver";
+import { TerminalAPI } from "@/components/terminal/TerminalAPI";
 import { Command } from "@/types/command";
+import { ReplayMode } from "@/types/ReplayMode";
 import Image from "next/image";
 
 export const aboutCommand: Command = {
   name: "about",
   description: "Show information about me",
   descriptionKey: "commands.about.description",
+  replayMode: ReplayMode.Normal,
 
-  execute(terminalReceiver: TerminalReceiver): void {
-    const t = terminalReceiver.translate.bind(terminalReceiver);
+  execute(terminalAPI: TerminalAPI): void {
+    const t = terminalAPI.translate.bind(terminalAPI);
     const output: React.ReactElement = (
       <div className="flex flex-col gap-4">
         <br />
@@ -49,6 +51,6 @@ export const aboutCommand: Command = {
       </div>
     );
 
-    terminalReceiver.write(output);
+    terminalAPI.write(output);
   }
 };

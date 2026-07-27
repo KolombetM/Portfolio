@@ -1,13 +1,15 @@
-import { TerminalReceiver } from "@/components/terminal/TerminalReceiver";
+import { TerminalAPI } from "@/components/terminal/TerminalAPI";
 import { Command } from "@/types/command";
+import { ReplayMode } from "@/types/ReplayMode";
 
 export const projectsCommand: Command = {
   name: "projects",
   description: "Show my projects",
   descriptionKey: "commands.projects.description",
+  replayMode: ReplayMode.Normal,
 
-  execute(terminalReceiver: TerminalReceiver): void {
-    const t = terminalReceiver.translate.bind(terminalReceiver);
+  execute(terminalAPI: TerminalAPI): void {
+    const t = terminalAPI.translate.bind(terminalAPI);
 
     const output = (
       <div className="flex flex-col gap-4">
@@ -25,6 +27,6 @@ export const projectsCommand: Command = {
         </p>
       </div>
     )
-    terminalReceiver.write(output);
+    terminalAPI.write(output);
   }
 }
