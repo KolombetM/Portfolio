@@ -2,6 +2,7 @@ import { Command } from "@/types/command";
 import { commands } from "@/commands/registry";
 import { TerminalAPI } from "@/components/terminal/TerminalAPI";
 import { ReplayMode } from "@/types/ReplayMode";
+import CommandButton from "./CommandButton";
 
 export const helpCommand: Command = {
   name: "help",
@@ -14,7 +15,20 @@ export const helpCommand: Command = {
       .map(
         (command) => {
           return (
-            <div key={crypto.randomUUID()}>
+            <CommandButton
+              key={crypto.randomUUID()}
+              command={command}
+              onClick={terminalAPI.inputCommand.bind(terminalAPI)}
+              translate={terminalAPI.translate.bind(terminalAPI)}
+            />
+          )
+        });
+
+    terminalAPI.write(output);
+  }
+};
+
+{/* <div key={crypto.randomUUID()}>
               <button
                 className="cursor-pointer"
                 onClick={() => terminalAPI.inputCommand(command.name)}
@@ -33,10 +47,4 @@ export const helpCommand: Command = {
                 </span>
               </button>
               - {terminalAPI.translate(command.description, command.descriptionKey)}
-            </div>
-          )
-        });
-
-    terminalAPI.write(output);
-  }
-};
+            </div> */}
