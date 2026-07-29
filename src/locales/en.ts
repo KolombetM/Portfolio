@@ -1,3 +1,5 @@
+import { contactsCommand } from "@/commands/contactCommands/contacts";
+
 export default {
   terminalBody: {
     welcomMessage: `Welcome to my protfolio.`,
@@ -51,11 +53,26 @@ export default {
           and Tailwind CSS, with the database hosted on Neon.`
       }
     },
-    cvFrance: {
-      description: `Open my CV in French`
-    },
-    cvEnglish: {
-      description: `Open my CV in English`
+    contactCommands: {
+      contacts: {
+        description: `Show my contacts`
+      },
+      email: {
+        description: `kolya.kolombet@gmail.com`
+      },
+      github: {
+        description: `KolombetM`
+      },
+      linkedin: {
+        description: `KolombetM`
+      },
+      cvFrance: {
+        description: `Open my CV in French`
+      },
+      cvEnglish: {
+        description: `Open my CV in English`
+      }
     }
+
   }
 } as const;

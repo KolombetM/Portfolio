@@ -7,5 +7,5 @@ export interface Command {
   // Used for translateion
   descriptionKey?: string;
   replayMode: ReplayMode;
-  execute(receiver: TerminalAPI): void;
+  execute(terminalAPI: TerminalAPI): void;
 }
