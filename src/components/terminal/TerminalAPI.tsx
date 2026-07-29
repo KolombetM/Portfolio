@@ -2,6 +2,7 @@ import { ReplayMode } from '@/types/ReplayMode';
 import { TerminalAPIInterface } from '@/components/terminal/TerminalAPIInterface';
 import { commands } from "@/commands/registry";
 import { CommandHistory } from '@/components/terminal/CommandHistory';
+import { parseCommand } from '@/lib/commandParser';
 
 type SetHistory = React.Dispatch<React.SetStateAction<React.ReactNode[]>>;
 type SetCommand = React.Dispatch<React.SetStateAction<string>>;
@@ -40,8 +41,11 @@ export class TerminalAPI implements TerminalAPIInterface {
   }
 
   executeCommand(input: string): void {
+
+    const commandArg = parseCommand(input);
+
     const command = commands.find(
-      (command) => command.name === input
+      (command) => command.name === commandArg.command
     );
 
     if (!command) {
@@ -49,8 +53,8 @@ export class TerminalAPI implements TerminalAPIInterface {
       return;
     }
 
-    command.execute(this);
-    this.commandHistory.addCommand(command.name);
+    command.execute(this, commandArg.args);
+    this.commandHistory.addCommand(command.name + (commandArg.args?.join(" ") || ""));
     this.setCommand("");
   }
 

@@ -9,6 +9,6 @@ export const emailCommand: Command = {
   replayMode: ReplayMode.Never,
 
   execute(terminalAPI: TerminalAPI): void {
-
+    console.log("print email");
   }
 }

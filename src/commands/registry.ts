@@ -8,7 +8,7 @@ import { contactsCommand } from "./contactCommands/contacts";
 
 export const commands: Command[] = [
     aboutCommand,
-    contactsCommand,
+    // contactsCommand,
     helpCommand,
     projectsCommand,
     cvFranchCommand,

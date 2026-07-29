@@ -7,6 +7,7 @@ export default {
     type2: `to see available commands. Note that all the commands from help are clickable.`
   },
   commands: {
+    noArgs: `command doesn't accept arguments`,
     help: {
       description: `Show available commands`
     },
@@ -73,6 +74,5 @@ export default {
         description: `Open my CV in English`
       }
     }
-
   }
 } as const;

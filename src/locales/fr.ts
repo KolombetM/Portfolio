@@ -38,11 +38,25 @@ export default {
         description: `Une application web permettant de réserver des billets de bus, de rechercher des destinations et de consulter les itinéraires disponibles. Développée avec Django, PostgreSQL, JavaScript vanilla, HTML et Tailwind CSS, avec une base de données hébergée sur Neon.`
       }
     },
-    cvFrance: {
-      description: `Ouvrir mon CV en français`
-    },
-    cvEnglish: {
-      description: `Ouvrir mon CV en anglais`
+    contactCommands: {
+      contacts: {
+        description: `Afficher mes contacts`
+      },
+      email: {
+        description: `kolya.kolombet@gmail.com`
+      },
+      github: {
+        description: `KolombetM`
+      },
+      linkedin: {
+        description: `KolombetM`
+      },
+      cvFrance: {
+        description: `Ouvrir mon CV en français`
+      },
+      cvEnglish: {
+        description: `Ouvrir mon CV en anglais`
+      }
     }
   }
 } as const;
