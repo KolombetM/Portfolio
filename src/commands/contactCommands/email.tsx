@@ -10,7 +10,6 @@ export const emailCommand: Command = {
 
   execute(terminalAPI: TerminalAPI): void {
     terminalAPI.openEmail("kolya.kolombet@gmail.com?subject=Portfolio&body=Hi%20Mykola,");
-    terminalAPI.write(<p>{terminalAPI.translate("Email copied to clipboard", "commands.contactCommands.email.copyCommand")}</p>);
     navigator.clipboard.writeText("kolya.kolombet@gmail.com");
   }
 }

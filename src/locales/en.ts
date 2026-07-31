@@ -61,7 +61,7 @@ export default {
         commandExample: `Type "contacts [commandName]" to run command`
       },
       email: {
-        description: `kolya.kolombet@gmail.com`
+        description: `kolya.kolombet@gmail.com (Copy to clipboard and open mail agent)` 
       },
       github: {
         description: `KolombetM`

@@ -3,12 +3,12 @@ import { Command } from "@/types/command";
 import { ReplayMode } from "@/types/ReplayMode";
 
 export const gitHubCommand: Command = {
-    name: 'GitHub',
-    description: "KolombetM",
-    descriptionKey: "commands.contactCommands.github.description",
-    replayMode: ReplayMode.Never,
+  name: 'GitHub',
+  description: "KolombetM",
+  descriptionKey: "commands.contactCommands.github.description",
+  replayMode: ReplayMode.Never,
 
-    execute(terminalAPI: TerminalAPI): void {
-        
-    }
+  execute(terminalAPI: TerminalAPI): void {
+    terminalAPI.openUrl("https://github.com/KolombetM");
+  }
 }

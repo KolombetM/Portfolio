@@ -45,7 +45,8 @@ export default {
         commandExample: `Tapez "contacts [nomDeLaCommande]" pour exécuter la commande`
       },
       email: {
-        description: `kolya.kolombet@gmail.com`
+        description: `kolya.kolombet@gmail.com (Copier dans le presse-papiers et ouvrir le client de messagerie)`,
+        copyCommand: `Adresse e-mail copiée dans le presse-papiers`
       },
       github: {
         description: `KolombetM`
