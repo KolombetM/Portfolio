@@ -37,7 +37,7 @@ export class TerminalAPI implements TerminalAPIInterface {
   }
 
   write(output: React.ReactNode): void {
-    this.setOutputHistory((prevHistory) => [...prevHistory, output]);
+    this.setOutputHistory((prevHistory) => [...prevHistory, (<br/>), output]);
   }
 
   executeCommand(input: string): void {

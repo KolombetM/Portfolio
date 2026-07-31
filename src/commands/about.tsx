@@ -13,7 +13,6 @@ export const aboutCommand: Command = {
     const t = terminalAPI.translate.bind(terminalAPI);
     const output: React.ReactElement = (
       <div className="flex flex-col gap-4">
-        <br />
         <div className="flex items-start gap-4">
           <Image
             src="/images/profile.png"
