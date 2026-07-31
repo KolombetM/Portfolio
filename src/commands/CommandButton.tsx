@@ -4,19 +4,21 @@ type CommandProps = {
   command: Command,
   onClick: (commandName: string) => void,
   translate: (fallback: string, key?: string) => string
+  clickCommand?: string
 }
 
 export default function CommandButton({
   command,
   onClick,
-  translate
+  translate,
+  clickCommand
 }: CommandProps) {
 
   return (
-    <div key={crypto.randomUUID()}>
+    <div>
       <button
         className="cursor-pointer"
-        onClick={() => onClick(command.name)}
+        onClick={() => onClick(clickCommand ? clickCommand : command.name)}
       >
         <span
           className="

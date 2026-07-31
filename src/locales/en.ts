@@ -2,7 +2,7 @@ import { contactsCommand } from "@/commands/contactCommands/contacts";
 
 export default {
   terminalBody: {
-    welcomMessage: `Welcome to my protfolio.`,
+    welcomMessage: `Welcome to my portfolio.`,
     type1: `Type`,
     type2: `to see available commands. Note that all the commands from help are clickable.`
   },
@@ -56,7 +56,9 @@ export default {
     },
     contactCommands: {
       contacts: {
-        description: `Show my contacts`
+        description: `Show my contacts`,
+        availableContacts: `Available contacts:`,
+        commandExample: `Type "contacts [commandName]" to run command`
       },
       email: {
         description: `kolya.kolombet@gmail.com`

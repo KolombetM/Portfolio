@@ -16,7 +16,7 @@ export const contactsCommand: Command = {
         const subCommand = commands.find(
           (command) => command.name.toLowerCase() === args[0].toLowerCase()
         );
-        if (subCommand != undefined) 
+        if (subCommand != undefined)
           subCommand.execute(terminalAPI);
         else {
           terminalAPI.write(terminalAPI.translate("Command not found", "commands.contactCommands.contacts.commandNotFound") + " contacts" + args.join(" "));
@@ -27,22 +27,22 @@ export const contactsCommand: Command = {
       return;
     }
 
-    const output = commands
-      .map(
-        (command) => {
-          return (
-            <>
-              <p>{terminalAPI.translate("Available contacts:", "commands.contactCommands.contacts.availableContacts")}</p>
-              <CommandButton
-                key={command.name}
-                command={command}
-                onClick={terminalAPI.inputCommand.bind(terminalAPI)}
-                translate={terminalAPI.translate.bind(terminalAPI)}
-              />
-              <p>Type contacts [commandName] </p>
-            </>
-          )
-        });
+    const output = (
+      <>
+        <p>{terminalAPI.translate("Available contacts:", "commands.contactCommands.contacts.availableContacts")}</p>
+        {commands.map((command) => {
+          return <CommandButton
+            key={this.name + " " + command.name}
+            command={command}
+            onClick={terminalAPI.inputCommand.bind(terminalAPI)}
+            translate={terminalAPI.translate.bind(terminalAPI)}
+            clickCommand={this.name + " " + command.name}
+          />
+        })}
+        <p>{terminalAPI.translate("Type contacts [commandName] to run command", "commands.contactCommands.contacts.commandExample")} </p>
+      </>
+    )
+
     terminalAPI.write(output);
   }
 }

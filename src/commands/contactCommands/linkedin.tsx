@@ -3,12 +3,12 @@ import { Command } from "@/types/command";
 import { ReplayMode } from "@/types/ReplayMode";
 
 export const linkedinCommand: Command = {
-    name: 'Linkedin',
-    description: "KolombetM",
-    descriptionKey: "commands.contactCommands.linkedin.description",
-    replayMode: ReplayMode.Never,
+  name: 'Linkedin',
+  description: "KolombetM",
+  descriptionKey: "commands.contactCommands.linkedin.description",
+  replayMode: ReplayMode.Never,
 
-    execute(termianlAPI: TerminalAPI): void {
-        
-    }
+  execute(termianlAPI: TerminalAPI): void {
+    termianlAPI.openUrl("https://www.linkedin.com/in/kolombetm/");
+  }
 }

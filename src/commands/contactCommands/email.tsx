@@ -9,6 +9,8 @@ export const emailCommand: Command = {
   replayMode: ReplayMode.Never,
 
   execute(terminalAPI: TerminalAPI): void {
-    console.log("print email");
+    terminalAPI.openEmail("kolya.kolombet@gmail.com?subject=Portfolio&body=Hi%20Mykola,");
+    terminalAPI.write(<p>{terminalAPI.translate("Email copied to clipboard", "commands.contactCommands.email.copyCommand")}</p>);
+    navigator.clipboard.writeText("kolya.kolombet@gmail.com");
   }
 }

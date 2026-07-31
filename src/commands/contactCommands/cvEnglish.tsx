@@ -5,7 +5,7 @@ import { ReplayMode } from "@/types/ReplayMode";
 export const cvEnglishCommand: Command = {
   name: "cvEnglish",
   description: "Open my CV in English",
-  descriptionKey: "commands.contactCommands.cvEnglish.descripotion",
+  descriptionKey: "commands.contactCommands.cvEnglish.description",
   replayMode: ReplayMode.Never,
   
   execute(terminalAPI: TerminalAPI): void {

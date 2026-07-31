@@ -45,7 +45,7 @@ export class TerminalAPI implements TerminalAPIInterface {
     const commandArg = parseCommand(input);
 
     const command = commands.find(
-      (command) => command.name === commandArg.command
+      (command) => command.name === commandArg.command.toLowerCase()
     );
 
     if (!command) {
@@ -72,6 +72,10 @@ export class TerminalAPI implements TerminalAPIInterface {
 
   openUrl(url: string): void {
     window.open(url, "_blank");
+  }
+
+  openEmail(address: string){
+    window.location.href = "mailto:" + address;
   }
 
   downloadFile(path: string, url: string): void {
