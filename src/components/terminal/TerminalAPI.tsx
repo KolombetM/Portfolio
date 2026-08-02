@@ -54,7 +54,7 @@ export class TerminalAPI implements TerminalAPIInterface {
     }
 
     command.execute(this, commandArg.args);
-    this.commandHistory.addCommand(command.name + (commandArg.args?.join(" ") || ""));
+    this.commandHistory.addCommand(input);
     this.setCommand("");
   }
 
