@@ -23,7 +23,7 @@ export const aboutCommand: Command = {
           />
 
           <p>
-            {t("If you see it, ask me to fix :)","commands.about.summary")}
+            {t("If you see it, ask me to fix :)", "commands.about.summary")}
           </p>
         </div>
 

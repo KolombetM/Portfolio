@@ -7,7 +7,7 @@ export const cvEnglishCommand: Command = {
   description: "Open my CV in English",
   descriptionKey: "commands.contactCommands.cvEnglish.description",
   replayMode: ReplayMode.Never,
-  
+
   execute(terminalAPI: TerminalAPI): void {
   }
 }
