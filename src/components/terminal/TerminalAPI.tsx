@@ -11,7 +11,7 @@ export class TerminalAPI implements TerminalAPIInterface {
   private translator: (
     fallback: string,
     key?: string
-  ) => string = (fallback, _) => fallback;
+  ) => string = (fallback) => fallback;
 
   constructor(
     private setOutputHistory: SetHistory,
@@ -37,7 +37,7 @@ export class TerminalAPI implements TerminalAPIInterface {
   }
 
   write(output: React.ReactNode): void {
-    this.setOutputHistory((prevHistory) => [...prevHistory, (<br/>), output]);
+    this.setOutputHistory((prevHistory) => [...prevHistory, output]);
   }
 
   executeCommand(input: string): void {
@@ -45,7 +45,7 @@ export class TerminalAPI implements TerminalAPIInterface {
     const commandArg = parseCommand(input);
 
     const command = commands.find(
-      (command) => command.name === commandArg.command.toLowerCase()
+      (command) => command.name.toLocaleLowerCase() === commandArg.command.toLowerCase()
     );
 
     if (!command) {
@@ -101,7 +101,7 @@ export class TerminalAPI implements TerminalAPIInterface {
 
     for (let i = startIndex; i < commandHistory.length; i++) {
       const command = commands.find(c => c.name === commandHistory[i]);
-      if (command !== undefined){
+      if (command !== undefined && command.replayMode !== ReplayMode.Never) {
         command.execute(this);
       }
     }

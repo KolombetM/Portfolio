@@ -12,7 +12,7 @@ export class CommandHistory {
   }
 
   previous(): string | undefined {
-    if (history.length > 0 && this.historyIndex > 0) {
+    if (this.history.length > 0 && this.historyIndex > 0) {
       this.historyIndex = this.historyIndex - 1;
       return this.history[this.historyIndex];
     }

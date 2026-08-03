@@ -11,7 +11,7 @@ export const helpCommand: Command = {
   replayMode: ReplayMode.Normal,
 
   execute(terminalAPI: TerminalAPI): void {
-    let output = commands
+    const output = commands
       .map(
         (command) => {
           return (

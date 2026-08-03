@@ -41,7 +41,7 @@ export default {
     contactCommands: {
       contacts: {
         description: `Afficher mes contacts`,
-        availableContacts: `Contacts disponibles :`,
+        availableContacts: `Contacts disponibles:`,
         commandExample: `Tapez "contacts [nomDeLaCommande]" pour exécuter la commande`
       },
       email: {

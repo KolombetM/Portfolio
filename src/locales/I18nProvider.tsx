@@ -20,10 +20,10 @@ export function I18nProvider({
   const [language, setLanguage] = useState<Language>("en");
 
   function normalize(value: string): string {
-  return value
-    .trim()
-    .replace(/\s+/g, " ");
-}
+    return value
+      .trim()
+      .replace(/\s+/g, " ");
+  }
 
   function t(fallback: string, key?: string): string {
 
@@ -33,10 +33,17 @@ export function I18nProvider({
 
     const value = key
       .split(".")
-      .reduce(
-        (obj: any, part) => obj?.[part],
-        translations[language]
-      );
+      .reduce<unknown>((obj, part) => {
+        if (
+          obj &&
+          typeof obj === "object" &&
+          part in obj
+        ) {
+          return (obj as Record<string, unknown>)[part];
+        }
+
+        return undefined;
+      }, translations[language]);
 
     if (typeof value !== "string") {
       console.warn(`Missing translation: ${key}`);
