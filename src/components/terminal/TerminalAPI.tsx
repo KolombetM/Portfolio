@@ -74,7 +74,7 @@ export class TerminalAPI implements TerminalAPIInterface {
     window.open(url, "_blank");
   }
 
-  openEmail(address: string){
+  openEmail(address: string) {
     window.location.href = "mailto:" + address;
   }
 

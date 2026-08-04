@@ -1,8 +1,8 @@
 "use client";
 
 export function Caret() {
-    return (
-        <span className="
+  return (
+    <span className="
             inline-block
             w-[0.6em]
             h-[1.1em]
@@ -12,5 +12,5 @@ export function Caret() {
             align-text-bottom
             animate-blink
         " />
-    );
+  );
 }

@@ -4,7 +4,7 @@ export class CommandHistory {
   private MAX_HISTORY_LENGTH = 50;
 
   addCommand(command: string): void {
-    if (this.history.length >= this.MAX_HISTORY_LENGTH){
+    if (this.history.length >= this.MAX_HISTORY_LENGTH) {
       this.history.shift();
     }
     this.historyIndex = this.history.length + 1;

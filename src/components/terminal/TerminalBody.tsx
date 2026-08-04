@@ -24,14 +24,14 @@ export default function TerminalBody({ inputRef }: TerminalBodyProps) {
   const commandHistory = useMemo(() => new CommandHistory(), []);
 
   const terminalAPI = useMemo(
-  () =>
-    new TerminalAPI(
-      setOutputHistory,
-      setCommand,
-      commandHistory
-    ),
-  [setOutputHistory, setCommand, commandHistory]
-);
+    () =>
+      new TerminalAPI(
+        setOutputHistory,
+        setCommand,
+        commandHistory
+      ),
+    [setOutputHistory, setCommand, commandHistory]
+  );
 
   useEffect(() => {
     terminalAPI.setTranslator(t);
@@ -72,13 +72,13 @@ export default function TerminalBody({ inputRef }: TerminalBodyProps) {
 
       {/* It is ok to use index as key because we add 1 element or remove all.  */}
       {/* So the order of elements will not change */}
-        {outputHistory.map((output, index) => (
-          <div key={index} className="mt-4">
+      {outputHistory.map((output, index) => (
+        <div key={index} className="mt-4">
           <React.Fragment>
             {output}
           </React.Fragment>
-          </div>
-        ))}
+        </div>
+      ))}
 
 
       <Prompt

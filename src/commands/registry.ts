@@ -4,7 +4,9 @@ import { clearCommand } from "@/commands/clear";
 import { aboutCommand } from "@/commands/about";
 import { cvFranchCommand } from "@/commands/contactCommands/cvFranch";
 import { projectsCommand } from "@/commands/projects";
-import { contactsCommand } from "./contactCommands/contacts";
+import { contactsCommand } from "@/commands/contactCommands/contacts";
+import { cvEnglishCommand } from "@/commands/contactCommands/cvEnglish";
+import { experienceCommand } from "@/commands/experience";
 
 export const commands: Command[] = [
     aboutCommand,
@@ -12,6 +14,8 @@ export const commands: Command[] = [
     helpCommand,
     projectsCommand,
     cvFranchCommand,
+    cvEnglishCommand,
+    experienceCommand,
     clearCommand,
 ];
 

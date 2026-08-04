@@ -38,6 +38,36 @@ export default {
         description: `Une application web permettant de réserver des billets de bus, de rechercher des destinations et de consulter les itinéraires disponibles. Développée avec Django, PostgreSQL, JavaScript vanilla, HTML et Tailwind CSS, avec une base de données hébergée sur Neon.`
       }
     },
+    experience: {
+      description: `Show my experience`,
+      firstExperience: {
+        title: `Developpeur logiciel Full-Stack`,
+        company: `Nanopay — plateforme de paiements B2B, Toronto, Canada`,
+        period: `decembre 2019 – janvier 2026`,
+        firstBullet: `Conçu et mis en place un système de rapprochement automatique de 100 à 500 transactions
+                      quotidiennes entre la plateforme et les banques partenaires, réduisant de plus de 90 % les 
+                      contrôles manuels et renforçant la fiabilité du processus.`,
+        secondBullet: `Développé et déployé un moteur résilient de calcul des plafonds transactionnels en temps réel,
+                       prenant en compte la disponibilité des banques,
+                       les contraintes utilisateur et les fenêtres temporelles.`,
+        thirdBullet: `Automatisé le processus de vérification d’identité lors des transactions en intégrant des systèmes KYC,
+                      de paiement et backend, permettant une validation automatisée en temps réel (< 1 s).`,
+        fourthBullet: `Refondu le traitement des événements en remplaçant un mécanisme de polling API haute fréquence 
+                      (1 requête/sec/transaction) par une architecture basée sur des webhooks, 
+                      réduisant de 90 % les appels API redondants et optimisant la charge des services backend.`
+      },
+      secondExperience: {
+        title: `Data Scientist / Student Researcher (Co-op)`,
+        company: `Esentire et Conestoga College, Waterloo, ON`,
+        period: `avril 2019 – aout 2019`,
+        firstBullet: `Contribué au développement de réseaux de neurones pour des tâches
+                      de classification et de reconnaissance en utilisant Python et TensorFlow.`,
+        secondBullet: `Travaillé en étroite collaboration avec les designers afin
+                       d’implémenter la représentation frontend des résultats obtenus.`,
+        thirdBullet: `Participé aux revues de code et aux échanges techniques afin
+                      d’améliorer la qualité du projet et de renforcer la collaboration au sein de l’équipe.`
+      }
+    },
     contactCommands: {
       contacts: {
         description: `Afficher mes contacts`,

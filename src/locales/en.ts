@@ -54,6 +54,38 @@ export default {
           and Tailwind CSS, with the database hosted on Neon.`
       }
     },
+    experience: {
+      description: `Show my experience`,
+      firstExperience: {
+        title: `Full-Stack Software Developer`,
+        company: `Nanopay - P2P payment platform, Toronto, Canada`,
+        period: `Dec 2019 – Jan 2026`,
+        firstBullet: `Designed and implemented an automated reconciliation system for
+                      100–500 daily transactions between the platform and partner banks,
+                      reducing manual verification by over 90% and improving reliability
+                      of reconciliation processes.`,
+        secondBullet: `Developed and deployed a resilient real-time transaction limit
+                       calculation engine accounting for bank availability, user-specific
+                       constraints, and time-based windows.`,
+        thirdBullet: `Automated identity verification by integrating KYC systems,
+                      payment systems, and backend services, enabling real-time
+                      validation under 1 second.`,
+        fourthBullet: `Developed and deployed a resilient real-time transaction limit
+                       calculation engine accounting for bank availability, user-specific
+                       constraints, and time-based windows.`
+      },
+      secondExperience: {
+        title: `Data Scientist / Student Researcher (Co-op)`,
+        company: `Esentire and Conestoga College, Waterloo, ON`,
+        period: `Apr 2019 – Aug 2019`,
+        firstBullet: `Contributed to neural network development for classification and
+                      recognition tasks using Python and TensorFlow.`,
+        secondBullet: `Worked with designers to implement frontend visualization of
+                       machine learning results.`,
+        thirdBullet: `Participated in code reviews and technical discussions to improve
+                      project quality and team collaboration.`
+      }
+    },
     contactCommands: {
       contacts: {
         description: `Show my contacts`,

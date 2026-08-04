@@ -9,5 +9,6 @@ export const cvEnglishCommand: Command = {
   replayMode: ReplayMode.Never,
 
   execute(terminalAPI: TerminalAPI): void {
+    terminalAPI.openUrl("/documents/KolombetEN.pdf");
   }
 }

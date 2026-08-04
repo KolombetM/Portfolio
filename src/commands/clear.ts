@@ -7,7 +7,7 @@ export const clearCommand: Command = {
   description: "Clear the terminal output",
   replayMode: ReplayMode.Boundary,
 
-  execute(terminalAPI: TerminalAPI) : void {
+  execute(terminalAPI: TerminalAPI): void {
     terminalAPI.clearOutput();
   }
 };
