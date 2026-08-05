@@ -50,7 +50,7 @@ export default {
         secondBullet: `Développé et déployé un moteur résilient de calcul des plafonds transactionnels en temps réel,
                        prenant en compte la disponibilité des banques,
                        les contraintes utilisateur et les fenêtres temporelles.`,
-        thirdBullet: `Automatisé le processus de vérification d’identité lors des transactions en intégrant des systèmes KYC,
+        thirdBullet: `Automatisé le processus de vérification d'identité lors des transactions en intégrant des systèmes KYC,
                       de paiement et backend, permettant une validation automatisée en temps réel (< 1 s).`,
         fourthBullet: `Refondu le traitement des événements en remplaçant un mécanisme de polling API haute fréquence 
                       (1 requête/sec/transaction) par une architecture basée sur des webhooks, 
@@ -63,9 +63,9 @@ export default {
         firstBullet: `Contribué au développement de réseaux de neurones pour des tâches
                       de classification et de reconnaissance en utilisant Python et TensorFlow.`,
         secondBullet: `Travaillé en étroite collaboration avec les designers afin
-                       d’implémenter la représentation frontend des résultats obtenus.`,
+                       d'implémenter la représentation frontend des résultats obtenus.`,
         thirdBullet: `Participé aux revues de code et aux échanges techniques afin
-                      d’améliorer la qualité du projet et de renforcer la collaboration au sein de l’équipe.`
+                      d'améliorer la qualité du projet et de renforcer la collaboration au sein de l'équipe.`
       }
     },
     contactCommands: {
