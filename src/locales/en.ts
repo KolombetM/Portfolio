@@ -1,5 +1,3 @@
-import { contactsCommand } from "@/commands/contactCommands/contacts";
-
 export default {
   terminalBody: {
     welcomMessage: `Welcome to my portfolio.`,
