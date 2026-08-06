@@ -7,11 +7,13 @@ import { projectsCommand } from "@/commands/projects";
 import { contactsCommand } from "@/commands/contactCommands/contacts";
 import { cvEnglishCommand } from "@/commands/contactCommands/cvEnglish";
 import { experienceCommand } from "@/commands/experience";
+import { skillsCommand } from "@/commands/skills";
 
 export const commands: Command[] = [
-    aboutCommand,
-    contactsCommand,
     helpCommand,
+    aboutCommand,
+    skillsCommand,
+    contactsCommand,
     projectsCommand,
     cvFranchCommand,
     cvEnglishCommand,

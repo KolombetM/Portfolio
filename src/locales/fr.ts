@@ -68,28 +68,64 @@ export default {
                       d'améliorer la qualité du projet et de renforcer la collaboration au sein de l'équipe.`
       }
     },
+    skills: {
+      description: `Afficher mes compétences`,
+      backend: `Back-end`,
+      frontend: `Front-end`,
+      databases: `Bases de données`,
+      devTools: `Outils de développement`,
+      practices: `Pratiques`,
+      java: `Java`,
+      nodeJs: `Node.js`,
+      python: `Python`,
+      restApis: `REST APIs`,
+      webhooks: `Webhooks`,
+      jwt: `JWT`,
+      paymentSystems: `Systèmes de paiement`,
+      kycIntegration: `Intégration KYC`,
+      transactionProcessing: `Traitement des transactions`,
+      eventDrivenArchitecture: `Architecture orientée événements`,
+      react: `React`,
+      nextJs: `Next.js`,
+      javascript: `JavaScript`,
+      typescript: `TypeScript`,
+      html5: `HTML5`,
+      css3: `CSS3`,
+      sql: `SQL`,
+      nosql: `NoSQL`,
+      git: `Git`,
+      github: `GitHub`,
+      linux: `Linux`,
+      postman: `Postman`,
+      jira: `Jira`,
+      agile: `Agile`,
+      scrum: `Scrum`,
+      codeReview: `Revue de code`,
+      apiDesign: `Conception d'API`,
+      systemIntegration: `Intégration de systèmes`
+    },
     contactCommands: {
-      contacts: {
-        description: `Afficher mes contacts`,
-        availableContacts: `Contacts disponibles:`,
-        commandExample: `Tapez "contacts [nomDeLaCommande]" pour exécuter la commande`
-      },
-      email: {
-        description: `kolya.kolombet@gmail.com (Copier dans le presse-papiers et ouvrir le client de messagerie)`,
-        copyCommand: `Adresse e-mail copiée dans le presse-papiers`
-      },
-      github: {
-        description: `KolombetM`
-      },
-      linkedin: {
-        description: `KolombetM`
-      },
-      cvFrance: {
-        description: `Ouvrir mon CV en français`
-      },
-      cvEnglish: {
-        description: `Ouvrir mon CV en anglais`
+        contacts: {
+          description: `Afficher mes contacts`,
+          availableContacts: `Contacts disponibles:`,
+          commandExample: `Tapez "contacts [nomDeLaCommande]" pour exécuter la commande`
+        },
+        email: {
+          description: `kolya.kolombet@gmail.com (Copier dans le presse-papiers et ouvrir le client de messagerie)`,
+          copyCommand: `Adresse e-mail copiée dans le presse-papiers`
+        },
+        github: {
+          description: `KolombetM`
+        },
+        linkedin: {
+          description: `KolombetM`
+        },
+        cvFrance: {
+          description: `Ouvrir mon CV en français`
+        },
+        cvEnglish: {
+          description: `Ouvrir mon CV en anglais`
+        }
       }
     }
-  }
-} as const;
+  } as const;
