@@ -76,11 +76,11 @@ export function I18nProvider({
       children
     )}
 
-    {/* {isLoading && translation && (
+    {isLoading && translation && (
       <div className="fixed inset-0 grid place-items-center bg-black/40">
         Loading…
       </div>
-    )} */}
+    )}
   </I18nContext.Provider>
 );
 }
