@@ -24,10 +24,14 @@ export default function RootLayout({
       lang="en"
       className={`${geistMono.variable} h-full antialiased`}
     >
-      <I18nProvider>
-        <HtmlLanguage />
-        <body className="min-h-full flex flex-col">{children}</body>
-      </I18nProvider>
+
+      <body className="min-h-full flex flex-col">
+        <I18nProvider>
+          <HtmlLanguage />
+          {children}
+        </I18nProvider>
+      </body>
+
     </html>
   );
 }

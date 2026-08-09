@@ -1,6 +1,6 @@
 "use client";
 
-import { Language, translations } from "@/locales/index";
+import { languages } from "@/locales/index";
 import { useContext } from "react";
 import { I18nContext } from "./I18nContext";
 
@@ -10,9 +10,7 @@ export default function LanguageToggler() {
     throw new Error("Context not provided");
   }
 
-  const { setLanguage, language } = context;
-
-  const languages = Object.keys(translations) as Language[];
+  const { changeLanguage, language } = context;
 
   return (
     <div className="flex rounded border border-green-400 overflow-hidden font-mono text-sm">
@@ -25,7 +23,7 @@ export default function LanguageToggler() {
                 ? "bg-green-400 text-black"
                 : "text-green-400 hover:bg-green-400 hover:text-black"}
             `}
-            onClick={() => setLanguage(lang)}
+            onClick={() => changeLanguage(lang)}
             key={lang}
           >
             {lang.toUpperCase()}

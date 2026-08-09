@@ -1,16 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { I18nContext } from "@/locales/I18nContext";
-import { Language } from "@/locales/index";
+import { Language, loadTranslation, Translation } from "@/locales/index";
 
-import en from "@/locales/en";
-import fr from "@/locales/fr";
-
-const translations = {
-  en,
-  fr
-};
 
 export function I18nProvider({
   children,
@@ -18,12 +11,32 @@ export function I18nProvider({
   children: React.ReactNode;
 }) {
   const [language, setLanguage] = useState<Language>("en");
+  const [translation, setTranslation] = useState<Translation | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   function normalize(value: string): string {
     return value
       .trim()
       .replace(/\s+/g, " ");
   }
+
+  useEffect(() => {
+    loadTranslation("en").then((messages) => {
+      setTranslation(messages);
+      setIsLoading(false);
+    });
+  }, []);
+
+  async function changeLanguage(nextLanguage: Language) {
+    setIsLoading(true);
+
+    const messages = await loadTranslation(nextLanguage);
+
+    setTranslation(messages);
+    setLanguage(nextLanguage);
+    setIsLoading(false);
+  }
+
 
   function t(fallback: string, key?: string): string {
 
@@ -43,7 +56,7 @@ export function I18nProvider({
         }
 
         return undefined;
-      }, translations[language]);
+      }, translation);
 
     if (typeof value !== "string") {
       console.warn(`Missing translation: ${key}`);
@@ -53,15 +66,21 @@ export function I18nProvider({
     return normalize(value);
   }
 
-  return (
-    <I18nContext.Provider
-      value={{
-        language,
-        setLanguage,
-        t,
-      }}
-    >
-      {children}
-    </I18nContext.Provider>
-  );
+ return (
+  <I18nContext.Provider value={{ language, changeLanguage, t}}>
+    {!translation ? (
+      <div className="min-h-screen grid place-items-center">
+        Loading…
+      </div>
+    ) : (
+      children
+    )}
+
+    {/* {isLoading && translation && (
+      <div className="fixed inset-0 grid place-items-center bg-black/40">
+        Loading…
+      </div>
+    )} */}
+  </I18nContext.Provider>
+);
 }
