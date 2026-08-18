@@ -1,36 +1,134 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Terminal Portfolio
+
+> A terminal-style portfolio built with React and Next.js.
+
+This is an interactive portfolio designed to feel like a real terminal rather than a traditional personal website.
+
+## About
+
+This app is a way to get to know me better through a command-line interface.
+
+Instead of navigating through traditional pages, you can use commands to explore my:
+
+* Profile
+* Experience
+* Skills
+* Projects
+* Education
+* Contact information
+
+Try typing:
+
+```bash
+help
+```
+
+to see the available commands.
+
+## Tech Stack
+
+* **Next.js**
+* **React**
+* **TypeScript**
+* **Tailwind CSS**
+
+## Features
+
+* Interactive terminal interface
+* Command history
+* Custom terminal commands
+* Keyboard navigation
+* Internationalization
+* Responsive design
+* GitHub / LinkedIn / Email links
+* Terminal-style UI and animations
 
 ## Getting Started
 
-First, run the development server:
+Clone the repository:
+
+```bash
+git clone https://github.com/YOUR_USERNAME/YOUR_REPOSITORY.git
+cd YOUR_REPOSITORY
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then open:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```text
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Project Structure
 
-## Learn More
+```text
+app/
+├── ui/
+│   └── terminal/
+│       ├── Terminal.tsx
+│       ├── TerminalBody.tsx
+│       ├── TerminalHeader.tsx
+│       └── Prompt.tsx
+│
+├── commands/
+│   └── ...
+│
+├── i18n/
+│   └── ...
+│
+└── page.tsx
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Commands
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The terminal supports commands for exploring different parts of the portfolio.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+help       # Show available commands
+about      # About me
+skills     # Technical skills
+projects   # Projects
+experience # Professional experience
+education  # Education
+contact    # Contact information
+clear      # Clear the terminal
+```
 
-## Deploy on Vercel
+Run `help` inside the terminal to see the current list of available commands.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Why a Terminal?
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Most portfolios use the same structure: a landing page, navigation bar, project cards, and a contact section.
+
+I wanted to build something different.
+
+The terminal interface turns the portfolio itself into a small software project and gives visitors an opportunity to interact with it instead of simply reading a page.
+
+## Development
+
+The project is built with a component-based architecture and TypeScript.
+
+The terminal separates:
+
+* UI rendering
+* Command execution
+* Terminal state
+* Output history
+* Internationalization
+
+This makes it possible to add new commands without coupling them directly to the terminal UI.
+
+## License
+
+This project is for personal portfolio purposes.
