@@ -2,7 +2,8 @@ export default {
   terminalBody: {
     welcomMessage: `Welcome to my portfolio.`,
     type1: `Type`,
-    type2: `to see available commands. Note that all the commands from help are clickable.`
+    type2: `to see available commands.`,
+    clickable: `Note that all the commands from help are clickable.`
   },
   commands: {
     noArgs: `command doesn't accept arguments`,

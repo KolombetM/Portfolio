@@ -60,6 +60,7 @@ export default function TerminalBody({ inputRef }: TerminalBodyProps) {
       ref={scrollRef}
       className="h-150 p-6 font-mono text-green-400 whitespace-pre-wrap wrap-break-word overflow-y-auto terminal-scroll">
       <p>{t("Welcome to my portfolio.", "terminalBody.welcomMessage")}</p>
+      <p>{t("Note that all the commands from help are clickable", "terminalBody.clickable")}</p>
       <p>{t("Type", "terminalBody.type1")} &quot;<button
         className="
                 text-cyan-400
